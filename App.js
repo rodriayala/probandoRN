@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+
+/*
+import { MainScreen } from './MainScreen';
+
+import Root from './Roots';
+
+
+const Stack = createNativeStackNavigator();
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+	return (
+		<NavigationContainer>
+			<Stack.Navigator>
+				<Stack.Screen name="Home" component={MainScreen} />
+				<Stack.Screen name="Root" component={Root} />
+			</Stack.Navigator>
+		</NavigationContainer>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	);
+}
+*/
+const Drawer = createDrawerNavigator();
+import { ProfileScreen } from './ProfileScreen';
+import { SettingsScreen } from './SettingsScreen';
+import { customTab } from './navigation/customTab';
+
+export default function App() {
+	return (
+		<NavigationContainer>
+			<Drawer.Navigator initialRouteName="Inicio">
+				<Drawer.Screen name="Inicio" component={customTab} 
+				/>
+				<Drawer.Screen name="Mi Perfil" component={SettingsScreen} />
+			</Drawer.Navigator>
+		</NavigationContainer>
+	);
+}
