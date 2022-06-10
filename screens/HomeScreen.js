@@ -4,23 +4,32 @@ import { StyleSheet,Button, Text, View,Dimensions ,ScrollView,Image,FlatList,Tou
 import MapView, { PROVIDER_GOOGLE,} from 'react-native-maps'; 
 import * as Location from 'expo-location';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { State } from 'react-native-gesture-handler';
 
-
+//Tamaño para las cards
+const { width, height } = Dimensions.get("window");
+const CARD_HEIGHT = height / 4;
+const CARD_WIDTH = CARD_HEIGHT - 50;
 
 //export function HomeScreen(props: any) {
 
 export function HomeScreen(props: any) {
 
-    const [latlng,setLatLng] = useState({})
+    const [latlng,setLatLng] = useState({
+        latitude: 10,
+        longitude: 10,
+        latitudeDelta: 0.001,
+        longitudeDelta: 0.001,
+    })
 
 
-      function region( latitude, longitude, latitudeDelta, longitudeDelta )
+      /*function region( latitude, longitude, latitudeDelta, longitudeDelta )
       {
           this.latitude      = latitude;
           this.longitude     = longitude;
           this.latitudeDelta = latitudeDelta;
           this.longitudeDelta= longitudeDelta;
-      }
+      }*/
 
       
     //Verifico si están los permisos necesarios para usar la geolocalización y el mapa
@@ -51,8 +60,9 @@ export function HomeScreen(props: any) {
             } = await Location.getCurrentPositionAsync();
             //lat = latitude;
            
-            var objregion = new region( latitude, longitude, 0.04, 0.04 );
+           //var objregion = new region( latitude, longitude, 0.04, 0.04 );
             //console.log(objregion);
+
             setLatLng({latitude:latitude,longitude:longitude,latitudeDelta: 0.04,
                 longitudeDelta: 0.04,})
 
@@ -62,13 +72,12 @@ export function HomeScreen(props: any) {
     }
 
 
-
     const _map = useRef(1);
 
-
     useEffect(()=>{
-        checkPermission();
-        getLocation()
+        checkPermission();//Verifico los permisos
+        getLocation()//Obtengo la localización actual del usuario
+
         //console.log(latlng)
     ,[]})
 
@@ -82,9 +91,8 @@ export function HomeScreen(props: any) {
                 ref = {_map}
                 provider ={PROVIDER_GOOGLE}
                 style = {styles.map}
-                //initialRegion={latlng}
-                region={objregion}
-                //onRegionChange={latlng}
+                initialRegion={latlng}
+                region={latlng}
                 showsUserLocation ={true}
                 followsUserLocation = {true}
             />
