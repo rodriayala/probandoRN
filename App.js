@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-
 /*
 import { MainScreen } from './MainScreen';
 
@@ -31,7 +30,9 @@ import { ProfileScreen } from './ProfileScreen';
 import { SettingsScreen } from './SettingsScreen';
 import { customTab } from './navigation/customTab';
 
+
 export default function App() {
+	
 	return (
 		<NavigationContainer>
 			<Drawer.Navigator initialRouteName="Inicio">

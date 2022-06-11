@@ -1,5 +1,5 @@
 import React,{useState,useRef,useEffect} from 'react'
-import { StyleSheet,Button, Text, View,Dimensions ,ScrollView,Image,FlatList,TouchableOpacity,Animated,TextInput} from 'react-native'
+import { StyleSheet,Button, Text, View,Dimensions,ScrollView,Image,FlatList,TouchableOpacity,Animated,TextInput} from 'react-native'
 
 import MapView, { PROVIDER_GOOGLE,} from 'react-native-maps'; 
 import * as Location from 'expo-location';
@@ -14,6 +14,7 @@ const CARD_HEIGHT = 220;
 const CARD_WIDTH = width * 0.8;
 const SPACING_FOR_CARD_INSET = width * 0.1 - 10;
 import { markers } from '../global/data';
+import StarRating from '../components/starRating';
 
 //export function HomeScreen(props: any) {
 
@@ -67,8 +68,8 @@ export function HomeScreen(props: any) {
            //var objregion = new region( latitude, longitude, 0.04, 0.04 );
             //console.log(objregion);
 
-            setLatLng({latitude:latitude,longitude:longitude,latitudeDelta: 0.04,
-                longitudeDelta: 0.04,})
+            setLatLng({latitude:latitude,longitude:longitude,latitudeDelta: 0.01,
+                longitudeDelta: 0.01,})
 
         }catch(err){
     
@@ -187,15 +188,7 @@ export function HomeScreen(props: any) {
             </MapView.Marker>
           );
         })}
-   <View style={styles.searchBox}>
-        <TextInput 
-          placeholder="Search here"
-          placeholderTextColor="#000"
-          autoCapitalize="none"
-          style={{flex:1,padding:0}}
-        />
-        
-      </View>
+
       <ScrollView
         horizontal
         scrollEventThrottle={1}
@@ -254,7 +247,7 @@ export function HomeScreen(props: any) {
             />
             <View style={styles.textContent}>
               <Text numberOfLines={1} style={styles.cardtitle}>{marker.title}</Text>
-              
+              <StarRating ratings={marker.rating} reviews={marker.reviews} />
               <Text numberOfLines={1} style={styles.cardDescription}>{marker.description}</Text>
               <View style={styles.button}>
                 <TouchableOpacity
@@ -266,7 +259,7 @@ export function HomeScreen(props: any) {
                 >
                   <Text style={[styles.textSign, {
                     color: '#FF6347'
-                  }]}>Order Now</Text>
+                  }]}>Solicitar Paseo</Text>
                 </TouchableOpacity>
               </View>
             </View>

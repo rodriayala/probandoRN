@@ -68,8 +68,8 @@ export const carsAround = [{latitude:-26.207487,longitude:28.236226},
 export const markers = [
     {
       coordinate: {
-        latitude: 22.6293867,
-        longitude: 88.4354486,
+        latitude: -34.593129,
+        longitude: -58.514065,
         latitudeDelta: 0.001,
         longitudeDelta: 0.001,
       },
@@ -81,9 +81,9 @@ export const markers = [
       id:1,
     },
     {
-      coordinate: {
-        latitude: 22.6345648,
-        longitude: 88.4377279,
+      coordinate: { 
+        latitude: -34.581859,
+        longitude: -58.522132,
         latitudeDelta: 0.001,
         longitudeDelta: 0.001,
       },
@@ -96,8 +96,8 @@ export const markers = [
     },
     {
       coordinate: {
-        latitude: 22.6281662,
-        longitude: 88.4410113,
+        latitude: -34.592542,
+        longitude: -58.523774,
         latitudeDelta: 0.001,
         longitudeDelta: 0.001,
       },
@@ -110,8 +110,8 @@ export const markers = [
     },
     {
       coordinate: {
-        latitude: 22.6341137,
-        longitude: 88.4497463,
+        latitude: -34.593151,
+        longitude: -58.519920,
         latitudeDelta: 0.001,
         longitudeDelta: 0.001,
       },
@@ -124,8 +124,8 @@ export const markers = [
     },
     {
       coordinate: {
-        latitude: 22.6292757,
-        longitude: 88.444781,
+        latitude: -34.582148,
+        longitude: -58.514261,
         latitudeDelta: 0.001,
         longitudeDelta: 0.001,
       },
