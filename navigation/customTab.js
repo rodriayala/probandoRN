@@ -20,24 +20,28 @@ export function customTab() {
 
                     if(route.name === 'Home') {
                     }
-                    else if (route.name === 'Details') {
-                        iconName = 'ios-list';
-                    } else if (route.name === 'Contact') {
-                        iconName = 'ios-call';
+                    else if (route.name === 'Dog') {
+                        iconName = 'walk';
+                    } else if (route.name === 'Notifications') {
+                        iconName = 'notifications-outline';
+                    } else if (route.name === 'messages') {
+                        iconName = 'mail-unread-outline';
                     }
 
                     return <Ionicons name={iconName} size={size} color={color} />;
                 },
                 
-
-            })}>
-            <Tab.Screen name="HomeScreen" component={HomeScreen} 
+            })} >
+            <Tab.Screen name="Home" component={HomeScreen} 
             			options={{
 							headerShown: false, 
                             title: 'Inicio',               
-							}}    />
-            <Tab.Screen name="DetailsScreen" component={DetailsScreen} options={{ title: 'Pasos Anteriores' }} />
-            <Tab.Screen name="NotificationsScreens" component={NotificationsScreens} options={{ title: 'Notificaciones' }} />
+							}}    
+                            />
+                            
+            <Tab.Screen name="Dog" component={DetailsScreen} options={{ title: 'Paseos Anteriores' }} />
+            <Tab.Screen name="Notifications" component={NotificationsScreens} options={{ title: 'Notificaciones' }} />
+            <Tab.Screen name="messages" component={NotificationsScreens} options={{ title: 'Mensajes' }} />
         </Tab.Navigator>
 
     );

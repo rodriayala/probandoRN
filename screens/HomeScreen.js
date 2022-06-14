@@ -16,7 +16,6 @@ const SPACING_FOR_CARD_INSET = width * 0.1 - 10;
 import { markers } from '../global/data';
 import StarRating from '../components/starRating';
 
-//export function HomeScreen(props: any) {
 
 export function HomeScreen(props: any) {
 

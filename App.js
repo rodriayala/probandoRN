@@ -33,7 +33,7 @@ import { customTab } from './navigation/customTab';
 
 export default function App() {
 	
-	return (
+	return ( //Tengo que modificar el titulo de la app, agregar logo, poner imagen del usuario y nombre
 		<NavigationContainer>
 			<Drawer.Navigator initialRouteName="Inicio">
 				<Drawer.Screen name="Inicio" component={customTab} 
